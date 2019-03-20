@@ -3,11 +3,11 @@ package Day4_Generics;
 import java.io.*;
 import java.util.*;
 
-import com.sun.corba.se.impl.io.TypeMismatchException;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.TypeCheckError;
+//import com.sun.corba.se.impl.io.TypeMismatchException;
+//import com.sun.org.apache.xalan.internal.xsltc.compiler.util.TypeCheckError;
 
 import Day3_collections.EmployeeHash;
-import sun.security.util.Length;
+//import sun.security.util.Length;
 
 class NegId extends Exception {
 	static int c = 0;
