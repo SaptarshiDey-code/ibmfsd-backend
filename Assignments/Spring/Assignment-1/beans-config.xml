@@ -1,0 +1,58 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean instantiation with default constructor -->
+	<bean id="greetings" class="SpringIntro.Greetings" >
+		<property name="message" value="Hello World message from config file" />
+	</bean>
+	<bean id="greetings1" class="SpringIntro.Greetings" >
+		<property name="message" value="Hello Again message from config file" />
+	</bean>
+	
+	<bean id="getDate" class="java.time.LocalDate" factory-method="parse">
+	
+	<constructor-arg index="0" value="1991-07-18"></constructor-arg>
+	
+	</bean>
+	
+	<bean id="add1" class="SpringIntro.Address">
+	
+	<property name="city" value="kolkata"/>
+	<property name="country" value="INDIA"/>
+	<property name="pin" value="700054"/>
+	
+	
+	</bean>
+	
+	
+	
+	
+	<bean id="employee1" class="SpringIntro.EmployeeSpr"> <!--  autowire="constructor"-->
+	<constructor-arg name="id" value="1">
+	</constructor-arg>
+	<constructor-arg name="name" value="Ram">
+	</constructor-arg>
+	 <constructor-arg  name="address" ref="add1">
+	</constructor-arg>
+	  
+	<property name="dob" ref="getDate"></property>
+	<property name="designation" value="Manager"/>
+	<property name="salary" value="35000"/>
+	<property name="skills">
+	 <list>
+				<value>Java</value>
+				<value>Node</value>
+				<value>Spring</value>
+			</list>
+		</property>
+	<property name="fulltime" value="true"/>
+	
+	</bean>
+	
+
+	
+	
+
+</beans>
